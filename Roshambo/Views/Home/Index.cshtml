@@ -4,29 +4,25 @@
 }
 
 <h2>Roshambo</h2>
-
-<div>
-    <p>Choose a game type:</p>
-    <div>
-        <button>Player vs. CPU</button>
-        <button>CPU vs. CPU</button>
+<div ng-controller="RoshamboController">
+    <div id="mainGame">
+        <p>Choose a game type:</p>
+        <div>
+            <button ng-click="setGameUp(true)">Player vs. CPU</button>
+            <button ng-click="setGameUp(false)">CPU vs. CPU</button>
+        </div>
     </div>
-</div>
 
-<div>
-    <p>Choose a number of rounds:</p>
-    <div>
-        <button>3</button>
-        <button>10</button>
-        <button>Play forever!</button>
+    <div id="cpuGame" hidden="hidden">
+        <button ng-click="getResult()">Play a round</button>
     </div>
-</div>
 
-<div>
-    <p>Pick a move:</p>
-    <div>
-        <button>Rock</button>
-        <button>Paper</button>
-        <button>Scissors</button>
+    <div id="humanGame" hidden="hidden">
+        <p>Pick a move:</p>
+        <div>
+            <button ng-click="getResult(0)">Rock</button>
+            <button ng-click="getResult(1)">Paper</button>
+            <button ng-click="getResult(2)">Scissors</button>
+        </div>
     </div>
 </div>
